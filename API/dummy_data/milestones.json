@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "goal": {
+      "id": 1,
+      "user": {
+        "id": 2,
+        "firstname": "Rodolph",
+        "lastname": "Saltsberg",
+        "profilepic": "##__BASE64__##",
+        "email": "rsaltsberg1@guardian.co.uk"
+      },
+      "deadline-date-time": "2019-05-25T15:04:05Z",
+      "title": "Run 10k",
+      "description": "Run 10 kilometres within a week"
+    },
+    "title": "Run 5k",
+    "percentage": "70%"
+  }
+]
