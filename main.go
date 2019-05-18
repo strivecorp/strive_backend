@@ -1,7 +1,6 @@
 package main
 
-import "log"
-
 func main() {
-	log.Println("Deluje!")
+	go APIHandler()
+	go BlockchainHandler()
 }
