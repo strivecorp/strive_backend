@@ -7,25 +7,87 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strconv"
 	"strive_backend/API/structs"
 )
 
 func APIHandler() {
 	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
 
-		fmt.Fprintln(w, "Users data below")
-		fmt.Fprintln(w, getUsers())
-		fmt.Fprintln(w, "Goals data below")
-		fmt.Fprintln(w, getGoals())
-		fmt.Fprintln(w, "Feed data below")
-		fmt.Fprintln(w, getFeedItems())
-		fmt.Fprintln(w, "Milestone data below")
-		fmt.Fprintln(w, getMilestones())
-		fmt.Fprintln(w, "Comments data below")
-		fmt.Fprintln(w, getComments())
-		fmt.Fprintln(w, readJsonById("goals.json", 0))
+		fmt.Fprintln(w, "use these!: /Users /User/id")
+		fmt.Fprintln(w, "/Users /User/id")
+		fmt.Fprintln(w, "/Goals /Goal/id")
+		fmt.Fprintln(w, "/Feeds /Feed/id")
+		fmt.Fprintln(w, "/Milestones /Milestone/id")
+		fmt.Fprintln(w, "/Comments /Comment/id")
 	})
 
+	http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
+		//fmt.Fprintln(w, "Users data below")
+		var idString = r.URL.Query().Get("id")
+		if(idString!=""){
+			idInt, err := strconv.Atoi(idString)
+			if err != nil {
+				fmt.Println("Invalid query")
+			}
+			fmt.Fprintln(w, readJsonById("users.json", idInt))
+		}else{
+			fmt.Fprintln(w,getUsers())
+		}
+	})
+	http.HandleFunc("/goals", func(w http.ResponseWriter, r *http.Request) {
+		//fmt.Fprintln(w, "Goals data below")
+		var idString = r.URL.Query().Get("id")
+		if(idString!=""){
+			idInt, err := strconv.Atoi(idString)
+			if err != nil {
+				fmt.Println("Invalid query")
+			}
+			fmt.Fprintln(w, readJsonById("goals.json", idInt))
+		}else{
+			fmt.Fprintln(w,getGoals())
+		}
+	})
+	http.HandleFunc("/feeds", func(w http.ResponseWriter, r *http.Request) {
+		//fmt.Fprintln(w, "Feed data below")
+		var idString = r.URL.Query().Get("id")
+		if(idString!=""){
+			idInt, err := strconv.Atoi(idString)
+			if err != nil {
+				fmt.Println("Invalid query")
+			}
+			fmt.Fprintln(w, readJsonById("feed_item.json", idInt))
+		}else{
+			fmt.Fprintln(w,getFeedItems())
+		}
+	})
+	http.HandleFunc("/milestones", func(w http.ResponseWriter, r *http.Request) {
+		//fmt.Fprintln(w, "Milestone data below")
+		var idString = r.URL.Query().Get("id")
+		if(idString!=""){
+			idInt, err := strconv.Atoi(idString)
+			if err != nil {
+				fmt.Println("Invalid query")
+			}
+			fmt.Fprintln(w, readJsonById("milestones.json", idInt))
+		}else{
+			fmt.Fprintln(w,getMilestones())
+		}
+	})
+	http.HandleFunc("/comments", func(w http.ResponseWriter, r *http.Request) {
+		//fmt.Fprintln(w, "Comments data below")
+		var idString = r.URL.Query().Get("id")
+		if(idString!=""){
+			idInt, err := strconv.Atoi(idString)
+			if err != nil {
+				fmt.Println("Invalid query")
+			}
+
+			fmt.Fprintln(w, readJsonById("comments.json", idInt))
+		}else{
+			fmt.Fprintln(w,getComments())
+		}
+	})
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
@@ -90,7 +152,7 @@ func readJsonById(fileName string, id int) string {
 				return string(json)
 			}
 		}
-		return "Not found"
+		return "{ error: '404', description: 'Resource not found' }"
 	case "feed_item.json":
 		var t []structs.FeedItem
 		errRead := json.Unmarshal(bigBoyJson, &t)
@@ -106,7 +168,7 @@ func readJsonById(fileName string, id int) string {
 				return string(json)
 			}
 		}
-		return "Not found"
+		return "{ error: '404', description: 'Resource not found' }"
 	case "goals.json":
 		var t []structs.Goal
 		errRead := json.Unmarshal(bigBoyJson, &t)
@@ -122,7 +184,7 @@ func readJsonById(fileName string, id int) string {
 				return string(json)
 			}
 		}
-		return "Not found"
+		return "{ error: '404', description: 'Resource not found' }"
 	case "milestones.json":
 		var t []structs.Milestone
 		errRead := json.Unmarshal(bigBoyJson, &t)
@@ -138,7 +200,7 @@ func readJsonById(fileName string, id int) string {
 				return string(json)
 			}
 		}
-		return "Not found"
+		return "{ error: '404', description: 'Resource not found' }"
 	case "users.json":
 		var t []structs.User
 		errRead := json.Unmarshal(bigBoyJson, &t)
@@ -154,7 +216,7 @@ func readJsonById(fileName string, id int) string {
 				return string(json)
 			}
 		}
-		return "Not found"
+		return "{ error: '404', description: 'Resource not found' }"
 	default:
 		panic(types.Interface{})
 	}
