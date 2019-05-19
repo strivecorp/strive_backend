@@ -100,6 +100,7 @@ func APIHandler() {
 }
 
 func addFeedItem(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	var t []structs.FeedItem
 	jsonFile, _ := ioutil.ReadFile("API/dummy_data/feed_item.json")
 	errRead := json.Unmarshal(jsonFile, &t)
@@ -108,9 +109,12 @@ func addFeedItem(w http.ResponseWriter, r *http.Request) {
 	}
 
 	body, _ := ioutil.ReadAll(r.Body)
-
+	log.Println(r.Body)
 	var tOne structs.FeedItem
-	_ = json.Unmarshal(body, tOne)
+	_ = json.Unmarshal(body, &tOne)
+	if tOne.Likes == nil {
+		tOne.Likes = []int{}
+	}
 	t = append(t, tOne)
 
 	js, _ := json.Marshal(t)
