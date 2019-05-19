@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"strconv"
 	"strive_backend/API/structs"
+	"bytes"
 )
 
 func APIHandler() {
@@ -108,17 +109,25 @@ func addFeedItem(w http.ResponseWriter, r *http.Request) {
 		panic(errRead)
 	}
 
-	body, _ := ioutil.ReadAll(r.Body)
-	log.Println(r.Body)
-	var tOne structs.FeedItem
-	_ = json.Unmarshal(body, &tOne)
-	if tOne.Likes == nil {
-		tOne.Likes = []int{}
-	}
-	t = append(t, tOne)
+	//body, _ := ioutil.ReadAll(r.Body)
+	//log.Println(r.Body)
+	//var tOne structs.FeedItem
+	//_ = json.Unmarshal(body, &tOne)
+	//if tOne.Likes == nil {
+	//	tOne.Likes = []int{}
+	//}
 
-	js, _ := json.Marshal(t)
-	_ = ioutil.WriteFile("API/dummy_data/feed_item.json", js, 0644)
+	//js, _ := json.Marshal(t)
+	buf := new(bytes.Buffer)
+	buf.ReadFrom(r.Body)
+	tempBuf := buf.String()
+	log.Println(tempBuf)
+	log.Println(tempBuf)
+	tekst := "[" + tempBuf + "," + string(jsonFile[1:])
+
+	_ = ioutil.WriteFile("API/dummy_data/feed_item.json", []byte(tekst), 0644)
+
+	//t = append(t, tOne)
 
 	w.Write([]byte(""))
 }
