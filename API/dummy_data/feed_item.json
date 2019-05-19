@@ -29,24 +29,29 @@
     "likes-array": [
       1,
       2,
-      3
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
     ]
   },
   {
-    "id": 1,
+    "id": 2,
     "user": {
-      "id": 2,
-      "firstname": "Nejc",
-      "lastname": "Košir",
+      "id": 3,
+      "firstname": "Gregor",
+      "lastname": "Gabrovsek",
       "profilepic": "##__BASE64__##",
-      "email": "nejc@strive"
+      "email": "gregor@strive"
     },
     "goal": {
       "id": 2,
       "user": {
-        "id": 1,
+        "id": 3,
         "firstname": "Gregor",
-        "lastname": "Gabrovšek",
+        "lastname": "Gabrovsek",
         "profilepic": "##__BASE64__##",
         "email": "gregor@strive"
       },
@@ -60,8 +65,7 @@
       3,
       4,
       5,
-      6,
-      7
+      6
     ]
   },
   {
@@ -74,9 +78,44 @@
       "email": "nejc@strive"
     },
     "milestone": {
-      "id": 1,
+      "id": 2,
       "goal": {
-        "id":31,
+        "id": 2,
+        "user": {
+          "id": 2,
+          "firstname": "Nejc",
+          "lastname": "Košir",
+          "profilepic": "##__BASE64__##",
+          "email": "nejc@strive"
+        },
+        "deadline-date-time": "2020-07-25T12:00:00Z",
+        "title": "Achieve a black belt in judo",
+        "description": "I finally want to achieve my dreams and get a black belt in judo!"
+      },
+      "title": "I have just spent my third week meditating - and daily at that! I am more in touch with my nature, and therefore feel more in the present whilst practicing Judo.",
+      "percentage": 4,
+      "likes-array": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "user": {
+      "id": 2,
+      "firstname": "Nejc",
+      "lastname": "Košir",
+      "profilepic": "##__BASE64__##",
+      "email": "nejc@strive"
+    },
+    "milestone": {
+      "id": 3,
+      "goal": {
+        "id": 3,
         "user": {
           "id": 2,
           "firstname": "Nejc",
@@ -107,7 +146,7 @@
       "email": "zan@strive"
     },
     "milestone": {
-      "id": 1,
+      "id": 4,
       "goal": {
         "id": 4,
         "user": {
@@ -122,13 +161,162 @@
         "description": "I want to graduate from the IT sciences on time."
       },
       "title": "I started writing my diploma, this should be all over very soon!",
-      "percentage": 85
+      "percentage": 85,
+      "completed": 0
     },
     "likes-array": [
       1,
       2,
-      3
+      3,
+      4,
+      5
     ]
   },
+  {
+    "id": 5,
+    "user": {
+      "id": 2,
+      "firstname": "Nejc",
+      "lastname": "Košir",
+      "profilepic": "##__BASE64__##",
+      "email": "nejc@strive"
+    },
+    "milestone": {
+      "id": 5,
+      "goal": {
+        "id": 4,
+        "user": {
+          "id": 2,
+          "firstname": "Nejc",
+          "lastname": "Košir",
+          "profilepic": "##__BASE64__##",
+          "email": "nejc@strive"
+        },
+        "deadline-date-time": "2019-05-25T15:04:05Z",
+        "title": "Graduate successfully",
+        "description": "I want to graduate from the IT sciences on time.",
+        "completed": 0
+      },
+      "title": "I just turned in my diploma! All the hard work is done now... I leave it to my professor now!",
+      "percentage": 98
+    },
+    "likes-array": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 6,
+    "user": {
+      "id": 2,
+      "firstname": "Nejc",
+      "lastname": "Košir",
+      "profilepic": "##__BASE64__##",
+      "email": "nejc@strive"
+    },
+    "milestone": {
+      "id": 6,
+      "goal": {
+        "id": 1,
+        "user": {
+          "id": 2,
+          "firstname": "Nejc",
+          "lastname": "Košir",
+          "profilepic": "##__BASE64__##",
+          "email": "nejc@strive"
+        },
+        "deadline-date-time": "2019-05-25T15:04:05Z",
+        "title": "Run 10 km in a week",
+        "description": "Run 10 kilometres within a week"
+      },
+      "title": "I managed to run another 3 kilometres! It was a hassle as it was a morning run, and all the traffic made it quite unenjoyable...",
+      "percentage": 80
+    },
+    "likes-array": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 7,
+    "user": {
+      "id": 2,
+      "firstname": "Nejc",
+      "lastname": "Košir",
+      "profilepic": "##__BASE64__##",
+      "email": "nejc@strive"
+    },
+    "milestone": {
+      "id": 7,
+      "goal": {
+        "id": 4,
+        "user": {
+          "id": 2,
+          "firstname": "Nejc",
+          "lastname": "Košir",
+          "profilepic": "##__BASE64__##",
+          "email": "nejc@strive"
+        },
+        "deadline-date-time": "2019-05-25T15:04:05Z",
+        "title": "Graduate successfully",
+        "description": "I want to graduate from the IT sciences on time.",
+        "completed": 1
+      },
+      "title": "Ahh! I made it! I bloody made it! 10/10. I want to thank you all for following me on my goal. I actually don't think I would've got through the last few weeks with the same speed as I have, if it weren't for you. <3 to all!",
+      "percentage": 100
+    },
+    "likes-array": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  {
+    "id": 3,
+    "user": {
+      "id": 3,
+      "firstname": "Gregor",
+      "lastname": "Gabrovsek",
+      "profilepic": "##__BASE64__##",
+      "email": "gregor@strive"
+    },
+    "milestone": {
+      "id": 8,
+      "goal": {
+        "id": 2,
+        "user": {
+          "id": 3,
+          "firstname": "Gregor",
+          "lastname": "Gabrovsek",
+          "profilepic": "##__BASE64__##",
+          "email": "gregor@strive"
+        },
+        "deadline-date-time": "2020-07-25T12:00:00Z",
+        "title": "Achieve a black belt in judo",
+        "description": "I finally want to achieve my dreams and get a black belt in judo!"
+      },
+      "title": "A big thank you to my followers. You helped me get in touch with myself - I was able to attain the proclaimed brown belt in Judo!",
+      "percentage": 12
+    },
+    "likes-array": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  }
 ]
-
