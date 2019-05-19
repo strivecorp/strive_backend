@@ -1,24 +1,24 @@
 [
   {
     "id": 1,
-    "firstname": "Livy",
-    "lastname": "Collinette",
+    "firstname": "Gregor",
+    "lastname": "Gabrovšek",
     "profilepic": "##__BASE64__##",
-    "email": "lcollinette0@amazon.co.uk"
+    "email": "gregor@strive"
   },
   {
     "id": 2,
-    "firstname": "Rodolph",
-    "lastname": "Saltsberg",
+    "firstname": "Nejc",
+    "lastname": "Košir",
     "profilepic": "##__BASE64__##",
-    "email": "rsaltsberg1@guardian.co.uk"
+    "email": "nejc@strive"
   },
   {
     "id": 3,
-    "firstname": "Debor",
-    "lastname": "Matyatin",
+    "firstname": "Žan",
+    "lastname": "Žagar",
     "profilepic": "##__BASE64__##",
-    "email": "dmatyatin2@answers.com"
+    "email": "zan@strive"
   }
 ]
 

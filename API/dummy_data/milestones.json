@@ -5,16 +5,16 @@
       "id": 1,
       "user": {
         "id": 2,
-        "firstname": "Rodolph",
-        "lastname": "Saltsberg",
+        "firstname": "Nejc",
+        "lastname": "Košir",
         "profilepic": "##__BASE64__##",
-        "email": "rsaltsberg1@guardian.co.uk"
+        "email": "nejc@strive"
       },
       "deadline-date-time": "2019-05-25T15:04:05Z",
       "title": "Run 10k",
       "description": "Run 10 kilometres within a week"
     },
     "title": "Run 5k",
-    "percentage": "70%"
+    "percentage": 70
   }
 ]

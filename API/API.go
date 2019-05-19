@@ -94,7 +94,29 @@ func APIHandler() {
 			fmt.Fprintln(w,getComments())
 		}
 	})
+
+	http.HandleFunc("/add/goal", addGoal)
 	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func addFeedItem(w http.ResponseWriter, r *http.Request) {
+	var t []structs.FeedItem
+	jsonFile, _ := ioutil.ReadFile("API/dummy_data/feed_item.json")
+	errRead := json.Unmarshal(jsonFile, &t)
+	if errRead != nil {
+		panic(errRead)
+	}
+
+	body, _ := ioutil.ReadAll(r.Body)
+
+	var tOne structs.FeedItem
+	_ = json.Unmarshal(body, tOne)
+	t = append(t, tOne)
+
+	js, _ := json.Marshal(t)
+	_ = ioutil.WriteFile("API/dummy_data/feed_item.json", js, 0644)
+
+	w.Write([]byte(""))
 }
 
 func getUsers() string {

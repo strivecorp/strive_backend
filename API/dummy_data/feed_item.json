@@ -2,11 +2,11 @@
   {
     "id": 1,
     "user": {
-      "id": 1,
-      "firstname": "Livy",
-      "lastname": "Collinette",
+      "id": 2,
+      "firstname": "Nejc",
+      "lastname": "Košir",
       "profilepic": "##__BASE64__##",
-      "email": "lcollinette0@amazon.co.uk"
+      "email": "nejc@strive"
     },
     "milestone": {
       "id": 1,
@@ -14,19 +14,121 @@
         "id": 1,
         "user": {
           "id": 2,
-          "firstname": "Rodolph",
-          "lastname": "Saltsberg",
+          "firstname": "Nejc",
+          "lastname": "Košir",
           "profilepic": "##__BASE64__##",
-          "email": "rsaltsberg1@guardian.co.uk"
+          "email": "nejc@strive"
         },
         "deadline-date-time": "2019-05-25T15:04:05Z",
-        "title": "Run 10k",
+        "title": "Run 10 km in a week",
         "description": "Run 10 kilometres within a week"
       },
-      "title": "Run 5k",
-      "percentage": 70
+      "title": "I managed to run five kilometers! I'm really quite impressed with myself, I think I'm quite ready to finally complete this goal...",
+      "percentage": 50
     },
-    "likes-array": [1,2,3]
-  }
+    "likes-array": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 1,
+    "user": {
+      "id": 2,
+      "firstname": "Nejc",
+      "lastname": "Košir",
+      "profilepic": "##__BASE64__##",
+      "email": "nejc@strive"
+    },
+    "goal": {
+      "id": 2,
+      "user": {
+        "id": 1,
+        "firstname": "Gregor",
+        "lastname": "Gabrovšek",
+        "profilepic": "##__BASE64__##",
+        "email": "gregor@strive"
+      },
+      "deadline-date-time": "2020-07-25T12:00:00Z",
+      "title": "Achieve a black belt in judo",
+      "description": "I finally want to achieve my dreams and get a black belt in judo!"
+    },
+    "likes-array": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "id": 3,
+    "user": {
+      "id": 2,
+      "firstname": "Nejc",
+      "lastname": "Košir",
+      "profilepic": "##__BASE64__##",
+      "email": "nejc@strive"
+    },
+    "milestone": {
+      "id": 1,
+      "goal": {
+        "id":31,
+        "user": {
+          "id": 2,
+          "firstname": "Nejc",
+          "lastname": "Košir",
+          "profilepic": "##__BASE64__##",
+          "email": "nejc@strive"
+        },
+        "deadline-date-time": "2019-05-19T18:00:00Z",
+        "title": "Win on Dragonhack",
+        "description": "Win all the prizes on this year's Dragonhack"
+      },
+      "title": "The sponsors seem very interested! Victory seems very likely this year, me and my team hope for the best!",
+      "percentage": 80
+    },
+    "likes-array": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 4,
+    "user": {
+      "id": 3,
+      "firstname": "Žan",
+      "lastname": "Žagar",
+      "profilepic": "##__BASE64__##",
+      "email": "zan@strive"
+    },
+    "milestone": {
+      "id": 1,
+      "goal": {
+        "id": 4,
+        "user": {
+          "id": 3,
+          "firstname": "Žan",
+          "lastname": "Žagar",
+          "profilepic": "##__BASE64__##",
+          "email": "zan@strive"
+        },
+        "deadline-date-time": "2019-05-25T15:04:05Z",
+        "title": "Graduate successfully",
+        "description": "I want to graduate from the IT sciences on time."
+      },
+      "title": "I started writing my diploma, this should be all over very soon!",
+      "percentage": 85
+    },
+    "likes-array": [
+      1,
+      2,
+      3
+    ]
+  },
 ]
 
