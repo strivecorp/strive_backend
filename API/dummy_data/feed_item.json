@@ -24,7 +24,7 @@
         "description": "Run 10 kilometres within a week"
       },
       "title": "Run 5k",
-      "percentage": "70%"
+      "percentage": 70
     },
     "likes-array": [1,2,3]
   }

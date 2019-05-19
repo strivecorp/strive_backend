@@ -13,6 +13,7 @@ import (
 
 func APIHandler() {
 	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
+		enableCors(&w)
 
 		fmt.Fprintln(w, "use these!: /Users /User/id")
 		fmt.Fprintln(w, "/Users /User/id")
@@ -23,6 +24,7 @@ func APIHandler() {
 	})
 
 	http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
+		enableCors(&w)
 		//fmt.Fprintln(w, "Users data below")
 		var idString = r.URL.Query().Get("id")
 		if(idString!=""){
@@ -36,6 +38,7 @@ func APIHandler() {
 		}
 	})
 	http.HandleFunc("/goals", func(w http.ResponseWriter, r *http.Request) {
+		enableCors(&w)
 		//fmt.Fprintln(w, "Goals data below")
 		var idString = r.URL.Query().Get("id")
 		if(idString!=""){
@@ -49,6 +52,7 @@ func APIHandler() {
 		}
 	})
 	http.HandleFunc("/feeds", func(w http.ResponseWriter, r *http.Request) {
+		enableCors(&w)
 		//fmt.Fprintln(w, "Feed data below")
 		var idString = r.URL.Query().Get("id")
 		if(idString!=""){
@@ -62,6 +66,7 @@ func APIHandler() {
 		}
 	})
 	http.HandleFunc("/milestones", func(w http.ResponseWriter, r *http.Request) {
+		enableCors(&w)
 		//fmt.Fprintln(w, "Milestone data below")
 		var idString = r.URL.Query().Get("id")
 		if(idString!=""){
@@ -75,6 +80,7 @@ func APIHandler() {
 		}
 	})
 	http.HandleFunc("/comments", func(w http.ResponseWriter, r *http.Request) {
+		enableCors(&w)
 		//fmt.Fprintln(w, "Comments data below")
 		var idString = r.URL.Query().Get("id")
 		if(idString!=""){
@@ -221,4 +227,8 @@ func readJsonById(fileName string, id int) string {
 		panic(types.Interface{})
 	}
 
+}
+
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
