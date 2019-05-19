@@ -6,6 +6,7 @@ import (
 	"time"
 	"encoding/json"
 	"strconv"
+	"io/ioutil"
 )
 
 type Init interface {
@@ -44,10 +45,11 @@ func (i i) makeBlock(w http.ResponseWriter, r *http.Request) {
 	)
 
 
+	js, _ := json.Marshal(i.bc.BlockChain)
+	_ = ioutil.WriteFile("./data.json", js, 0644)
 }
 
 func (i i) readBlockchain(w http.ResponseWriter, r *http.Request) {
-	//log.Println(i.bc.BlockChain)
 	js, _ := json.Marshal(i.bc.BlockChain)
 	w.Write(js)
 }

@@ -8,6 +8,7 @@ import (
 	"os"
 	"io/ioutil"
 	"encoding/json"
+	"log"
 )
 
 func InitiateBlockChain(loc string) (*ChainInfo) {
@@ -20,10 +21,14 @@ func InitiateBlockChain(loc string) (*ChainInfo) {
 		}
 		info.FileVar = f
 		info.BlockChain = []Block{generateFirst()}
+
+		js, _ := json.Marshal(info.BlockChain)
+		_ = ioutil.WriteFile("./data.json", js, 0644)
 	} else {
 		saved, _ := ioutil.ReadFile(loc)
 		err := json.Unmarshal(saved, &info.BlockChain)
 		if err != nil {
+			log.Println(err)
 			return nil
 		}
 		f, _ := os.Open(loc)
