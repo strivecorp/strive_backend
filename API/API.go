@@ -15,12 +15,12 @@ func APIHandler() {
 	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
 		enableCors(&w)
 
-		fmt.Fprintln(w, "use these!: /Users /User/id")
-		fmt.Fprintln(w, "/Users /User/id")
-		fmt.Fprintln(w, "/Goals /Goal/id")
-		fmt.Fprintln(w, "/Feeds /Feed/id")
-		fmt.Fprintln(w, "/Milestones /Milestone/id")
-		fmt.Fprintln(w, "/Comments /Comment/id")
+		fmt.Fprintln(w, "use these!: ")
+		fmt.Fprintln(w, "/users /users?id=1")
+		fmt.Fprintln(w, "/goals /goals?id=1")
+		fmt.Fprintln(w, "/feeds /feeds?id=1")
+		fmt.Fprintln(w, "/milestones /milestones?id=1")
+		fmt.Fprintln(w, "/comments /comments?id=1")
 	})
 
 	http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
@@ -95,7 +95,7 @@ func APIHandler() {
 		}
 	})
 
-	http.HandleFunc("/add/goal", addGoal)
+	http.HandleFunc("/add/feed", addFeedItem)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
